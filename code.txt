@@ -1,0 +1,251 @@
+class Point {
+	readonly int x;
+	int y;
+}
+class Node {
+	int value;
+	Node next;
+}
+class TestAdd {
+	int add(int one, int other) {
+		return one + other;
+	}
+	int add(int one, int other, int other2) {
+		return this.add(one, other) + other2;
+	}
+}
+func void dump(int x, bool y) {
+	dump(x);
+	dump(y);
+}
+func void dump(Point p) {
+	if (p == null) {
+		dump(0);
+		return;
+	}
+	dump(p.x);
+	dump(p.y);
+}
+dump();
+dump(7);
+dump(7, true);
+dump(trace(7::int)::int)::void;
+dump(trace(true::bool)::bool)::void;
+dump(trace(false::bool)::bool)::void;
+var a = (7::int)::int;
+dump(a);
+var a: int = 7;
+var a = Point(1, 2);
+var a: Point = Point(1::int, 2::int)::Point;
+var a: Point = null::Null;
+var a: Node = Node(1::int, null::Null)::Node;
+dump();
+dump(2 + 2);
+dump(5 - 2);
+dump(3 * 3);
+dump(10 / 2);
+dump(10 % 9);
+dump(1 + 3 < 10);
+dump(7 == 3 + 4);
+dump(Point(1, 1) == Point(1, 3));
+dump(Point(1, 3) == null);
+dump();
+if (false) {
+	while (true) {
+	}
+}
+var i = 1;
+while (i < 11) {
+	var j = 0;
+	var a = 0;
+	while (j < i) {
+		a = a * 10 + 1;
+		j = j + 1;
+	}
+	dump(a);
+	if (i % 2 == 0) {
+		dump(a);
+	}
+	i = i + 1;
+}
+dump();
+var a = TestAdd();
+dump(a.add(2, 1));
+dump(a.add(2, 1, 2));
+dump();
+while (true) {
+	dump(1);
+	break;
+	dump(2);
+}
+while (true) {
+	dump(1);
+	while (true) {
+		dump(1);
+		break;
+		dump(2);
+	}
+	break;
+	dump(2);
+}
+dump();
+var m = Point(3, 8);
+dump(m.y);
+dump();
+m.y = 13;
+dump(m.y);
+dump();
+dump(true && false::bool :: bool);
+dump(trace(true) && trace(false));
+dump(trace(false) && trace(true));
+dump();
+dump(true::bool || false::bool :: bool);
+dump(trace(false) || trace(true));
+dump(trace(true) || trace(false));
+dump();
+var i = 0;
+while (i < 5) {
+	if (i < 2) {
+		i = i + 1;
+		continue;
+	}
+	dump(i);
+	i = i + 1;
+}
+dump();
+while (true) {
+	dump(1);
+	break 1;
+	dump(2);
+}
+while (true) {
+	dump(1);
+	while (true) {
+		dump(2);
+		break 2;
+		dump(3);
+	}
+	dump(4);
+}
+dump();
+dump(true ? 1 : 2::int :: int);
+dump(trace(true) ? trace(2) : trace(5));
+dump(false ? null : Point(11, 12) :: Point);
+dump(true ? null : Point(11, 12) :: Point);
+dump(true ? 1 : true ? 2 : 3);
+dump();
+var a = 123;
+while (false) as a {
+	dump(11);
+}
+while (true) as a {
+	dump(11);
+	while (true) as a {
+		dump(22);
+		break a;
+		dump(33);
+	}
+	dump(44);
+	break a;
+	dump(55);
+}
+while (true) as a {
+	dump(11);
+	while (true) {
+		dump(22);
+		break a;
+		dump(33);
+	}
+	dump(44);
+}
+dump();
+var i = 1;
+while(i < 10) {
+	var t = 2;
+	while (t < i) {
+		if (i % t == 0) {
+			i = i + 1;
+			continue 2;
+		}
+		t = t + 1;
+	}
+	dump(i);
+	i = i + 1;
+}
+dump();
+var a = [1, 2, 3];
+var a = [false, true];
+var a = [null, null, Point(1, 2)];
+var a = [[1], [2, 3]];
+dump();
+dump('123' :: string);
+dump('1''
+''2''3');
+dump();
+var c : string = 'c';
+dump('ab' + c);
+dump();
+var a : (int) = 1 :: ((((int))));
+dump();
+dump(_test_makeIndexer([1, 2, 3])[0]);
+dump(_test_makeIndexer([1, 2, 3])['1']);
+_test_dumpObject(_test_makeArrayList([1, 2, 3])[2]);
+dump();
+dump(trace(1) < trace(2));
+dump(trace(1) <= trace(2));
+dump(trace(1) > trace(2));
+dump(trace(1) >= trace(2));
+dump(trace(1) == trace(2));
+dump(trace(1) != trace(2));
+dump(1 < 2 && 1 <= 2 && 1 != 2 && 1 <= 1 && 1 >= 1 && 1 == 1 && 2 > 1 && 2 >= 1 && 2 != 1);
+dump(1 > 2 || 1 >= 2 || 1 == 2 || 1 < 1 || 1 > 1 || 1 != 1 || 2 < 1 || 2 <= 1 || 2 == 1);
+dump(false < true && false <= true && false != true && false <= false && false >= false && false == false && true > false && true >= false && true != false);
+dump(false > true || false >= true || false == true || false < false || false > false || false != false || true < false || true <= false || true == false);
+dump();
+dump('' * 3);
+dump('ab' * 0);
+dump('ab' * 3);
+dump();
+dump(_test_makeTuple(3, 'ab').Item1);
+dump(_test_makeTuple(3, 'ab').Item2);
+dump();
+dump('abc'[1]);
+dump();
+var a = _test_makeIndexer([1, 2, 3]);
+a[0] = 5;
+dump(a[0]);
+var a = _test_makeIndexer([1, 2, 3]);
+a['1'] = 5;
+dump(a['1']);
+var a = _test_makeArrayList([1, 2, 3]);
+a[2] = _test_toObject(5);
+_test_dumpObject(a[2]);
+dump();
+dump(chr(113));
+dump(len('abc'));
+dump(ord('q'));
+dump();
+dump('abcd'[:]);
+dump('abcd'[1:]);
+dump('abcd'[:3]);
+dump('abcd'[1:3]);
+dump('abcd'[0:0]);
+dump('abcd'[4:4]);
+dump('abcd'[0:4]);
+dump();
+var a = [1, 2, 3][1];
+dump(a);
+var a = [[1, 2], [3, 4, 5]][1][1];
+dump(a);
+var a = [[1, 2], [3, 4, 5]][1];
+dump(a[0]);
+var a = [true, false][1];
+dump(a);
+var a = ['ab', 'abc'][1];
+dump(a);
+dump();
+var a = _test_ReadonlyClass();
+a.field2 = 10;
+dump(a.field2);
+/*
+*/
